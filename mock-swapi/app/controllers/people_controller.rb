@@ -15,22 +15,14 @@ class PeopleController < ApplicationController
 
   # POST /people
   def create
-    @person = Person.new(person_params)
-
-    if @person.save
-      render json: @person, status: :created, location: @person
-    else
-      render json: @person.errors, status: :unprocessable_entity
-    end
+    @person = Person.create!(person_params)
+    render json: @person, status: :created, location: @person
   end
 
   # PATCH/PUT /people/1
   def update
-    if @person.update(person_params)
-      render json: @person
-    else
-      render json: @person.errors, status: :unprocessable_entity
-    end
+    @person.update!(person_params)
+    render json: @person
   end
 
   # DELETE /people/1
@@ -46,6 +38,6 @@ class PeopleController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def person_params
-      params.require(:person).permit(:name, :birthyear, :planet_id)
+      params.permit(:name, :birthyear, :planet_id)
     end
 end

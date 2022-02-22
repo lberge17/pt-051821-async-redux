@@ -15,22 +15,14 @@ class PlanetsController < ApplicationController
 
   # POST /planets
   def create
-    @planet = Planet.new(planet_params)
-
-    if @planet.save
-      render json: @planet, status: :created, location: @planet
-    else
-      render json: @planet.errors, status: :unprocessable_entity
-    end
+    @planet = Planet.create!(planet_params)
+    render json: @planet, status: :created, location: @planet
   end
 
   # PATCH/PUT /planets/1
   def update
-    if @planet.update(planet_params)
-      render json: @planet
-    else
-      render json: @planet.errors, status: :unprocessable_entity
-    end
+    @planet.update!(planet_params)
+    render json: @planet
   end
 
   # DELETE /planets/1
@@ -46,6 +38,6 @@ class PlanetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def planet_params
-      params.require(:planet).permit(:name, :climate, :terrain)
+      params.permit(:name, :climate, :terrain)
     end
 end

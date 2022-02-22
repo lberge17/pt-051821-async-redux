@@ -4,7 +4,6 @@ class StarshipsController < ApplicationController
   # GET /starships
   def index
     @starships = Starship.all
-
     render json: @starships
   end
 
@@ -15,22 +14,14 @@ class StarshipsController < ApplicationController
 
   # POST /starships
   def create
-    @starship = Starship.new(starship_params)
-
-    if @starship.save
-      render json: @starship, status: :created, location: @starship
-    else
-      render json: @starship.errors, status: :unprocessable_entity
-    end
+    @starship = Starship.create!(starship_params)
+    render json: @starship, status: :created, location: @starship
   end
 
   # PATCH/PUT /starships/1
   def update
-    if @starship.update(starship_params)
-      render json: @starship
-    else
-      render json: @starship.errors, status: :unprocessable_entity
-    end
+    @starship.update!(starship_params)
+    render json: @starship
   end
 
   # DELETE /starships/1
@@ -46,6 +37,6 @@ class StarshipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def starship_params
-      params.require(:starship).permit(:name, :cost, :hyperdrive_rating)
+      params.permit(:name, :cost, :hyperdrive_rating)
     end
 end
