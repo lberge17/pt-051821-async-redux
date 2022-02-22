@@ -1,0 +1,610 @@
+Started GET "/" for ::1 at 2022-02-22 16:05:22 -0600
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/laura/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/laura/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.1ms | Allocations: 415)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 2237)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlanets (20220222220648)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "planets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "climate" varchar, "terrain" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220222220648"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePeople (20220222220730)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "birthyear" varchar, "planet_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_people_on_planet_id" ON "people" ("planet_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220222220730"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStarships (20220222220828)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "starships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cost" varchar, "hyperdrive_rating" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220222220828"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-02-22 22:10:49.374868"], ["updated_at", "2022-02-22 22:10:49.374868"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  [1m[36mStarship Load (0.1ms)[0m  [1m[34mSELECT "starships".* FROM "starships"[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.9ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tatooine"], ["climate", "arid"], ["terrain", "desert"], ["created_at", "2022-02-22 22:10:54.503413"], ["updated_at", "2022-02-22 22:10:54.503413"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alderaan"], ["climate", "temperate"], ["terrain", "grasslands, mountains"], ["created_at", "2022-02-22 22:10:54.507994"], ["updated_at", "2022-02-22 22:10:54.507994"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Yavin IV"], ["climate", "temperate, tropical"], ["terrain", "jungle, rainforests"], ["created_at", "2022-02-22 22:10:54.511651"], ["updated_at", "2022-02-22 22:10:54.511651"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hoth"], ["climate", "frozen"], ["terrain", "tundra, ice caves, mountain ranges"], ["created_at", "2022-02-22 22:10:54.515140"], ["updated_at", "2022-02-22 22:10:54.515140"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dagobah"], ["climate", "murky"], ["terrain", "swamp, jungles"], ["created_at", "2022-02-22 22:10:54.518800"], ["updated_at", "2022-02-22 22:10:54.518800"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bespin"], ["climate", "temperate"], ["terrain", "gas giant"], ["created_at", "2022-02-22 22:10:54.528982"], ["updated_at", "2022-02-22 22:10:54.528982"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Endor"], ["climate", "temperate"], ["terrain", "forests, mountains, lakes"], ["created_at", "2022-02-22 22:10:54.532237"], ["updated_at", "2022-02-22 22:10:54.532237"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Naboo"], ["climate", "temperate"], ["terrain", "grassy hills, swamps, forests, mountains"], ["created_at", "2022-02-22 22:10:54.536613"], ["updated_at", "2022-02-22 22:10:54.536613"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Coruscant"], ["climate", "temperate"], ["terrain", "cityscape, mountains"], ["created_at", "2022-02-22 22:10:54.540071"], ["updated_at", "2022-02-22 22:10:54.540071"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kamino"], ["climate", "temperate"], ["terrain", "ocean"], ["created_at", "2022-02-22 22:10:54.543495"], ["updated_at", "2022-02-22 22:10:54.543495"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.8ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Geonosis"], ["climate", "temperate, arid"], ["terrain", "rock, desert, mountain, barren"], ["created_at", "2022-02-22 22:10:55.133847"], ["updated_at", "2022-02-22 22:10:55.133847"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Utapau"], ["climate", "temperate, arid, windy"], ["terrain", "scrublands, savanna, canyons, sinkholes"], ["created_at", "2022-02-22 22:10:55.140812"], ["updated_at", "2022-02-22 22:10:55.140812"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mustafar"], ["climate", "hot"], ["terrain", "volcanoes, lava rivers, mountains, caves"], ["created_at", "2022-02-22 22:10:55.148005"], ["updated_at", "2022-02-22 22:10:55.148005"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kashyyyk"], ["climate", "tropical"], ["terrain", "jungle, forests, lakes, rivers"], ["created_at", "2022-02-22 22:10:55.153549"], ["updated_at", "2022-02-22 22:10:55.153549"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Polis Massa"], ["climate", "artificial temperate "], ["terrain", "airless asteroid"], ["created_at", "2022-02-22 22:10:55.157743"], ["updated_at", "2022-02-22 22:10:55.157743"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mygeeto"], ["climate", "frigid"], ["terrain", "glaciers, mountains, ice canyons"], ["created_at", "2022-02-22 22:10:55.161778"], ["updated_at", "2022-02-22 22:10:55.161778"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Felucia"], ["climate", "hot, humid"], ["terrain", "fungus forests"], ["created_at", "2022-02-22 22:10:55.165757"], ["updated_at", "2022-02-22 22:10:55.165757"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cato Neimoidia"], ["climate", "temperate, moist"], ["terrain", "mountains, fields, forests, rock arches"], ["created_at", "2022-02-22 22:10:55.168886"], ["updated_at", "2022-02-22 22:10:55.168886"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Saleucami"], ["climate", "hot"], ["terrain", "caves, desert, mountains, volcanoes"], ["created_at", "2022-02-22 22:10:55.171862"], ["updated_at", "2022-02-22 22:10:55.171862"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Stewjon"], ["climate", "temperate"], ["terrain", "grass"], ["created_at", "2022-02-22 22:10:55.174567"], ["updated_at", "2022-02-22 22:10:55.174567"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Eriadu"], ["climate", "polluted"], ["terrain", "cityscape"], ["created_at", "2022-02-22 22:10:55.931337"], ["updated_at", "2022-02-22 22:10:55.931337"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.9ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Corellia"], ["climate", "temperate"], ["terrain", "plains, urban, hills, forests"], ["created_at", "2022-02-22 22:10:55.938535"], ["updated_at", "2022-02-22 22:10:55.938535"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rodia"], ["climate", "hot"], ["terrain", "jungles, oceans, urban, swamps"], ["created_at", "2022-02-22 22:10:55.945154"], ["updated_at", "2022-02-22 22:10:55.945154"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nal Hutta"], ["climate", "temperate"], ["terrain", "urban, oceans, swamps, bogs"], ["created_at", "2022-02-22 22:10:55.950200"], ["updated_at", "2022-02-22 22:10:55.950200"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dantooine"], ["climate", "temperate"], ["terrain", "oceans, savannas, mountains, grasslands"], ["created_at", "2022-02-22 22:10:55.955830"], ["updated_at", "2022-02-22 22:10:55.955830"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bestine IV"], ["climate", "temperate"], ["terrain", "rocky islands, oceans"], ["created_at", "2022-02-22 22:10:55.960863"], ["updated_at", "2022-02-22 22:10:55.960863"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ord Mantell"], ["climate", "temperate"], ["terrain", "plains, seas, mesas"], ["created_at", "2022-02-22 22:10:55.966698"], ["updated_at", "2022-02-22 22:10:55.966698"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "unknown"], ["climate", "unknown"], ["terrain", "unknown"], ["created_at", "2022-02-22 22:10:55.971163"], ["updated_at", "2022-02-22 22:10:55.971163"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Trandosha"], ["climate", "arid"], ["terrain", "mountains, seas, grasslands, deserts"], ["created_at", "2022-02-22 22:10:55.975079"], ["updated_at", "2022-02-22 22:10:55.975079"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Socorro"], ["climate", "arid"], ["terrain", "deserts, mountains"], ["created_at", "2022-02-22 22:10:55.979289"], ["updated_at", "2022-02-22 22:10:55.979289"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mon Cala"], ["climate", "temperate"], ["terrain", "oceans, reefs, islands"], ["created_at", "2022-02-22 22:10:56.681815"], ["updated_at", "2022-02-22 22:10:56.681815"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chandrila"], ["climate", "temperate"], ["terrain", "plains, forests"], ["created_at", "2022-02-22 22:10:56.688398"], ["updated_at", "2022-02-22 22:10:56.688398"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sullust"], ["climate", "superheated"], ["terrain", "mountains, volcanoes, rocky deserts"], ["created_at", "2022-02-22 22:10:56.694016"], ["updated_at", "2022-02-22 22:10:56.694016"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Toydaria"], ["climate", "temperate"], ["terrain", "swamps, lakes"], ["created_at", "2022-02-22 22:10:56.699991"], ["updated_at", "2022-02-22 22:10:56.699991"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Malastare"], ["climate", "arid, temperate, tropical"], ["terrain", "swamps, deserts, jungles, mountains"], ["created_at", "2022-02-22 22:10:56.709859"], ["updated_at", "2022-02-22 22:10:56.709859"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dathomir"], ["climate", "temperate"], ["terrain", "forests, deserts, savannas"], ["created_at", "2022-02-22 22:10:56.713833"], ["updated_at", "2022-02-22 22:10:56.713833"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ryloth"], ["climate", "temperate, arid, subartic"], ["terrain", "mountains, valleys, deserts, tundra"], ["created_at", "2022-02-22 22:10:56.717997"], ["updated_at", "2022-02-22 22:10:56.717997"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aleen Minor"], ["climate", "unknown"], ["terrain", "unknown"], ["created_at", "2022-02-22 22:10:56.721830"], ["updated_at", "2022-02-22 22:10:56.721830"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Vulpter"], ["climate", "temperate, artic"], ["terrain", "urban, barren"], ["created_at", "2022-02-22 22:10:56.725598"], ["updated_at", "2022-02-22 22:10:56.725598"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (1.2ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Troiken"], ["climate", "unknown"], ["terrain", "desert, tundra, rainforests, mountains"], ["created_at", "2022-02-22 22:10:56.729632"], ["updated_at", "2022-02-22 22:10:56.729632"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tund"], ["climate", "unknown"], ["terrain", "barren, ash"], ["created_at", "2022-02-22 22:10:57.336599"], ["updated_at", "2022-02-22 22:10:57.336599"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.9ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haruun Kal"], ["climate", "temperate"], ["terrain", "toxic cloudsea, plateaus, volcanoes"], ["created_at", "2022-02-22 22:10:57.344088"], ["updated_at", "2022-02-22 22:10:57.344088"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.9ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cerea"], ["climate", "temperate"], ["terrain", "verdant"], ["created_at", "2022-02-22 22:10:57.350136"], ["updated_at", "2022-02-22 22:10:57.350136"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Glee Anselm"], ["climate", "tropical, temperate"], ["terrain", "lakes, islands, swamps, seas"], ["created_at", "2022-02-22 22:10:57.360659"], ["updated_at", "2022-02-22 22:10:57.360659"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Iridonia"], ["climate", "unknown"], ["terrain", "rocky canyons, acid pools"], ["created_at", "2022-02-22 22:10:57.374561"], ["updated_at", "2022-02-22 22:10:57.374561"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tholoth"], ["climate", "unknown"], ["terrain", "unknown"], ["created_at", "2022-02-22 22:10:57.378484"], ["updated_at", "2022-02-22 22:10:57.378484"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Iktotch"], ["climate", "arid, rocky, windy"], ["terrain", "rocky"], ["created_at", "2022-02-22 22:10:57.383014"], ["updated_at", "2022-02-22 22:10:57.383014"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Quermia"], ["climate", "unknown"], ["terrain", "unknown"], ["created_at", "2022-02-22 22:10:57.386554"], ["updated_at", "2022-02-22 22:10:57.386554"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dorin"], ["climate", "temperate"], ["terrain", "unknown"], ["created_at", "2022-02-22 22:10:57.390383"], ["updated_at", "2022-02-22 22:10:57.390383"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Champala"], ["climate", "temperate"], ["terrain", "oceans, rainforests, plateaus"], ["created_at", "2022-02-22 22:10:57.393801"], ["updated_at", "2022-02-22 22:10:57.393801"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mirial"], ["climate", "unknown"], ["terrain", "deserts"], ["created_at", "2022-02-22 22:10:58.069784"], ["updated_at", "2022-02-22 22:10:58.069784"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Serenno"], ["climate", "unknown"], ["terrain", "rainforests, rivers, mountains"], ["created_at", "2022-02-22 22:10:58.072839"], ["updated_at", "2022-02-22 22:10:58.072839"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Concord Dawn"], ["climate", "unknown"], ["terrain", "jungles, forests, deserts"], ["created_at", "2022-02-22 22:10:58.076139"], ["updated_at", "2022-02-22 22:10:58.076139"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Zolan"], ["climate", "unknown"], ["terrain", "unknown"], ["created_at", "2022-02-22 22:10:58.079060"], ["updated_at", "2022-02-22 22:10:58.079060"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ojom"], ["climate", "frigid"], ["terrain", "oceans, glaciers"], ["created_at", "2022-02-22 22:10:58.081980"], ["updated_at", "2022-02-22 22:10:58.081980"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Skako"], ["climate", "temperate"], ["terrain", "urban, vines"], ["created_at", "2022-02-22 22:10:58.085286"], ["updated_at", "2022-02-22 22:10:58.085286"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Muunilinst"], ["climate", "temperate"], ["terrain", "plains, forests, hills, mountains"], ["created_at", "2022-02-22 22:10:58.088529"], ["updated_at", "2022-02-22 22:10:58.088529"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Shili"], ["climate", "temperate"], ["terrain", "cities, savannahs, seas, plains"], ["created_at", "2022-02-22 22:10:58.094824"], ["updated_at", "2022-02-22 22:10:58.094824"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (1.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kalee"], ["climate", "arid, temperate, tropical"], ["terrain", "rainforests, cliffs, canyons, seas"], ["created_at", "2022-02-22 22:10:58.098360"], ["updated_at", "2022-02-22 22:10:58.098360"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (0.3ms)[0m  [1m[32mINSERT INTO "planets" ("name", "climate", "terrain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umbara"], ["climate", "unknown"], ["terrain", "unknown"], ["created_at", "2022-02-22 22:10:58.104318"], ["updated_at", "2022-02-22 22:10:58.104318"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.5ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "CR90 corvette"], ["cost", "3500000"], ["hyperdrive_rating", "2.0"], ["created_at", "2022-02-22 22:10:58.714138"], ["updated_at", "2022-02-22 22:10:58.714138"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.5ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Star Destroyer"], ["cost", "150000000"], ["hyperdrive_rating", "2.0"], ["created_at", "2022-02-22 22:10:58.719626"], ["updated_at", "2022-02-22 22:10:58.719626"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sentinel-class landing craft"], ["cost", "240000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:10:58.723623"], ["updated_at", "2022-02-22 22:10:58.723623"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.5ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Death Star"], ["cost", "1000000000000"], ["hyperdrive_rating", "4.0"], ["created_at", "2022-02-22 22:10:58.727914"], ["updated_at", "2022-02-22 22:10:58.727914"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Millennium Falcon"], ["cost", "100000"], ["hyperdrive_rating", "0.5"], ["created_at", "2022-02-22 22:10:58.731907"], ["updated_at", "2022-02-22 22:10:58.731907"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Y-wing"], ["cost", "134999"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:10:58.735024"], ["updated_at", "2022-02-22 22:10:58.735024"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "X-wing"], ["cost", "149999"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:10:58.737922"], ["updated_at", "2022-02-22 22:10:58.737922"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "TIE Advanced x1"], ["cost", "unknown"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:10:58.741333"], ["updated_at", "2022-02-22 22:10:58.741333"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Executor"], ["cost", "1143350000"], ["hyperdrive_rating", "2.0"], ["created_at", "2022-02-22 22:10:58.744502"], ["updated_at", "2022-02-22 22:10:58.744502"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rebel transport"], ["cost", "unknown"], ["hyperdrive_rating", "4.0"], ["created_at", "2022-02-22 22:10:58.747241"], ["updated_at", "2022-02-22 22:10:58.747241"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.7ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Slave 1"], ["cost", "unknown"], ["hyperdrive_rating", "3.0"], ["created_at", "2022-02-22 22:10:59.448501"], ["updated_at", "2022-02-22 22:10:59.448501"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.6ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Imperial shuttle"], ["cost", "240000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:10:59.455928"], ["updated_at", "2022-02-22 22:10:59.455928"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.5ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "EF76 Nebulon-B escort frigate"], ["cost", "8500000"], ["hyperdrive_rating", "2.0"], ["created_at", "2022-02-22 22:10:59.461078"], ["updated_at", "2022-02-22 22:10:59.461078"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.5ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Calamari Cruiser"], ["cost", "104000000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:10:59.466138"], ["updated_at", "2022-02-22 22:10:59.466138"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-wing"], ["cost", "175000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:10:59.471481"], ["updated_at", "2022-02-22 22:10:59.471481"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "B-wing"], ["cost", "220000"], ["hyperdrive_rating", "2.0"], ["created_at", "2022-02-22 22:10:59.475928"], ["updated_at", "2022-02-22 22:10:59.475928"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.5ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Republic Cruiser"], ["cost", "unknown"], ["hyperdrive_rating", "2.0"], ["created_at", "2022-02-22 22:10:59.480296"], ["updated_at", "2022-02-22 22:10:59.480296"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Droid control ship"], ["cost", "unknown"], ["hyperdrive_rating", "2.0"], ["created_at", "2022-02-22 22:10:59.485433"], ["updated_at", "2022-02-22 22:10:59.485433"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Naboo fighter"], ["cost", "200000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:10:59.489250"], ["updated_at", "2022-02-22 22:10:59.489250"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Naboo Royal Starship"], ["cost", "unknown"], ["hyperdrive_rating", "1.8"], ["created_at", "2022-02-22 22:10:59.496792"], ["updated_at", "2022-02-22 22:10:59.496792"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Scimitar"], ["cost", "55000000"], ["hyperdrive_rating", "1.5"], ["created_at", "2022-02-22 22:11:00.093662"], ["updated_at", "2022-02-22 22:11:00.093662"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "J-type diplomatic barge"], ["cost", "2000000"], ["hyperdrive_rating", "0.7"], ["created_at", "2022-02-22 22:11:00.097531"], ["updated_at", "2022-02-22 22:11:00.097531"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AA-9 Coruscant freighter"], ["cost", "unknown"], ["hyperdrive_rating", "unknown"], ["created_at", "2022-02-22 22:11:00.100960"], ["updated_at", "2022-02-22 22:11:00.100960"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jedi starfighter"], ["cost", "180000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:11:00.104289"], ["updated_at", "2022-02-22 22:11:00.104289"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "H-type Nubian yacht"], ["cost", "unknown"], ["hyperdrive_rating", "0.9"], ["created_at", "2022-02-22 22:11:00.110314"], ["updated_at", "2022-02-22 22:11:00.110314"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Republic Assault ship"], ["cost", "unknown"], ["hyperdrive_rating", "0.6"], ["created_at", "2022-02-22 22:11:00.113271"], ["updated_at", "2022-02-22 22:11:00.113271"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Solar Sailer"], ["cost", "35700"], ["hyperdrive_rating", "1.5"], ["created_at", "2022-02-22 22:11:00.116284"], ["updated_at", "2022-02-22 22:11:00.116284"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Trade Federation cruiser"], ["cost", "125000000"], ["hyperdrive_rating", "1.5"], ["created_at", "2022-02-22 22:11:00.119841"], ["updated_at", "2022-02-22 22:11:00.119841"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.5ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Theta-class T-2c shuttle"], ["cost", "1000000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:11:00.123000"], ["updated_at", "2022-02-22 22:11:00.123000"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.3ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Republic attack cruiser"], ["cost", "59000000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:11:00.126012"], ["updated_at", "2022-02-22 22:11:00.126012"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.5ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Naboo star skiff"], ["cost", "unknown"], ["hyperdrive_rating", "0.5"], ["created_at", "2022-02-22 22:11:00.742091"], ["updated_at", "2022-02-22 22:11:00.742091"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.6ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jedi Interceptor"], ["cost", "320000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:11:00.748626"], ["updated_at", "2022-02-22 22:11:00.748626"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.5ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "arc-170"], ["cost", "155000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:11:00.753275"], ["updated_at", "2022-02-22 22:11:00.753275"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Banking clan frigte"], ["cost", "57000000"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:11:00.758015"], ["updated_at", "2022-02-22 22:11:00.758015"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Belbullab-22 starfighter"], ["cost", "168000"], ["hyperdrive_rating", "6"], ["created_at", "2022-02-22 22:11:00.762271"], ["updated_at", "2022-02-22 22:11:00.762271"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStarship Create (0.4ms)[0m  [1m[32mINSERT INTO "starships" ("name", "cost", "hyperdrive_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "V-wing"], ["cost", "102500"], ["hyperdrive_rating", "1.0"], ["created_at", "2022-02-22 22:11:00.766640"], ["updated_at", "2022-02-22 22:11:00.766640"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (1.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Luke Skywalker"], ["birthyear", "19BBY"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:01.600117"], ["updated_at", "2022-02-22 22:11:01.600117"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "C-3PO"], ["birthyear", "112BBY"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:01.605814"], ["updated_at", "2022-02-22 22:11:01.605814"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "R2-D2"], ["birthyear", "33BBY"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:01.609884"], ["updated_at", "2022-02-22 22:11:01.609884"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Darth Vader"], ["birthyear", "41.9BBY"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:01.613838"], ["updated_at", "2022-02-22 22:11:01.613838"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Leia Organa"], ["birthyear", "19BBY"], ["planet_id", 2], ["created_at", "2022-02-22 22:11:01.617439"], ["updated_at", "2022-02-22 22:11:01.617439"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Owen Lars"], ["birthyear", "52BBY"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:01.620894"], ["updated_at", "2022-02-22 22:11:01.620894"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Beru Whitesun lars"], ["birthyear", "47BBY"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:01.623697"], ["updated_at", "2022-02-22 22:11:01.623697"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "R5-D4"], ["birthyear", "unknown"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:01.626979"], ["updated_at", "2022-02-22 22:11:01.626979"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Biggs Darklighter"], ["birthyear", "24BBY"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:01.629652"], ["updated_at", "2022-02-22 22:11:01.629652"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Obi-Wan Kenobi"], ["birthyear", "57BBY"], ["planet_id", 20], ["created_at", "2022-02-22 22:11:01.632291"], ["updated_at", "2022-02-22 22:11:01.632291"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.7ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Anakin Skywalker"], ["birthyear", "41.9BBY"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:02.992323"], ["updated_at", "2022-02-22 22:11:02.992323"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wilhuff Tarkin"], ["birthyear", "64BBY"], ["planet_id", 21], ["created_at", "2022-02-22 22:11:02.997934"], ["updated_at", "2022-02-22 22:11:02.997934"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chewbacca"], ["birthyear", "200BBY"], ["planet_id", 14], ["created_at", "2022-02-22 22:11:03.002868"], ["updated_at", "2022-02-22 22:11:03.002868"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Han Solo"], ["birthyear", "29BBY"], ["planet_id", 22], ["created_at", "2022-02-22 22:11:03.007620"], ["updated_at", "2022-02-22 22:11:03.007620"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Greedo"], ["birthyear", "44BBY"], ["planet_id", 23], ["created_at", "2022-02-22 22:11:03.011224"], ["updated_at", "2022-02-22 22:11:03.011224"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jabba Desilijic Tiure"], ["birthyear", "600BBY"], ["planet_id", 24], ["created_at", "2022-02-22 22:11:03.014652"], ["updated_at", "2022-02-22 22:11:03.014652"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.7ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wedge Antilles"], ["birthyear", "21BBY"], ["planet_id", 22], ["created_at", "2022-02-22 22:11:03.018563"], ["updated_at", "2022-02-22 22:11:03.018563"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jek Tono Porkins"], ["birthyear", "unknown"], ["planet_id", 26], ["created_at", "2022-02-22 22:11:03.022635"], ["updated_at", "2022-02-22 22:11:03.022635"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Yoda"], ["birthyear", "896BBY"], ["planet_id", 28], ["created_at", "2022-02-22 22:11:03.026399"], ["updated_at", "2022-02-22 22:11:03.026399"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Palpatine"], ["birthyear", "82BBY"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:03.029480"], ["updated_at", "2022-02-22 22:11:03.029480"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Boba Fett"], ["birthyear", "31.5BBY"], ["planet_id", 10], ["created_at", "2022-02-22 22:11:03.702751"], ["updated_at", "2022-02-22 22:11:03.702751"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "IG-88"], ["birthyear", "15BBY"], ["planet_id", 28], ["created_at", "2022-02-22 22:11:03.707949"], ["updated_at", "2022-02-22 22:11:03.707949"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bossk"], ["birthyear", "53BBY"], ["planet_id", 29], ["created_at", "2022-02-22 22:11:03.711973"], ["updated_at", "2022-02-22 22:11:03.711973"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lando Calrissian"], ["birthyear", "31BBY"], ["planet_id", 30], ["created_at", "2022-02-22 22:11:03.716266"], ["updated_at", "2022-02-22 22:11:03.716266"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lobot"], ["birthyear", "37BBY"], ["planet_id", 6], ["created_at", "2022-02-22 22:11:03.720133"], ["updated_at", "2022-02-22 22:11:03.720133"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ackbar"], ["birthyear", "41BBY"], ["planet_id", 31], ["created_at", "2022-02-22 22:11:03.725005"], ["updated_at", "2022-02-22 22:11:03.725005"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mon Mothma"], ["birthyear", "48BBY"], ["planet_id", 32], ["created_at", "2022-02-22 22:11:03.730172"], ["updated_at", "2022-02-22 22:11:03.730172"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Arvel Crynyd"], ["birthyear", "unknown"], ["planet_id", 28], ["created_at", "2022-02-22 22:11:03.734015"], ["updated_at", "2022-02-22 22:11:03.734015"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wicket Systri Warrick"], ["birthyear", "8BBY"], ["planet_id", 7], ["created_at", "2022-02-22 22:11:03.737969"], ["updated_at", "2022-02-22 22:11:03.737969"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nien Nunb"], ["birthyear", "unknown"], ["planet_id", 33], ["created_at", "2022-02-22 22:11:03.741483"], ["updated_at", "2022-02-22 22:11:03.741483"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (1.0ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Qui-Gon Jinn"], ["birthyear", "92BBY"], ["planet_id", 28], ["created_at", "2022-02-22 22:11:04.360528"], ["updated_at", "2022-02-22 22:11:04.360528"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.7ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nute Gunray"], ["birthyear", "unknown"], ["planet_id", 18], ["created_at", "2022-02-22 22:11:04.367746"], ["updated_at", "2022-02-22 22:11:04.367746"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.9ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Finis Valorum"], ["birthyear", "91BBY"], ["planet_id", 9], ["created_at", "2022-02-22 22:11:04.372651"], ["updated_at", "2022-02-22 22:11:04.372651"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Padmé Amidala"], ["birthyear", "46BBY"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:04.377894"], ["updated_at", "2022-02-22 22:11:04.377894"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jar Jar Binks"], ["birthyear", "52BBY"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:04.382607"], ["updated_at", "2022-02-22 22:11:04.382607"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Roos Tarpals"], ["birthyear", "unknown"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:04.387781"], ["updated_at", "2022-02-22 22:11:04.387781"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rugor Nass"], ["birthyear", "unknown"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:04.391532"], ["updated_at", "2022-02-22 22:11:04.391532"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ric Olié"], ["birthyear", "unknown"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:04.394701"], ["updated_at", "2022-02-22 22:11:04.394701"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Watto"], ["birthyear", "unknown"], ["planet_id", 34], ["created_at", "2022-02-22 22:11:04.397848"], ["updated_at", "2022-02-22 22:11:04.397848"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sebulba"], ["birthyear", "unknown"], ["planet_id", 35], ["created_at", "2022-02-22 22:11:04.401221"], ["updated_at", "2022-02-22 22:11:04.401221"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Quarsh Panaka"], ["birthyear", "62BBY"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:05.206642"], ["updated_at", "2022-02-22 22:11:05.206642"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Shmi Skywalker"], ["birthyear", "72BBY"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:05.212231"], ["updated_at", "2022-02-22 22:11:05.212231"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Darth Maul"], ["birthyear", "54BBY"], ["planet_id", 36], ["created_at", "2022-02-22 22:11:05.217085"], ["updated_at", "2022-02-22 22:11:05.217085"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bib Fortuna"], ["birthyear", "unknown"], ["planet_id", 37], ["created_at", "2022-02-22 22:11:05.221826"], ["updated_at", "2022-02-22 22:11:05.221826"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ayla Secura"], ["birthyear", "48BBY"], ["planet_id", 37], ["created_at", "2022-02-22 22:11:05.226198"], ["updated_at", "2022-02-22 22:11:05.226198"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ratts Tyerel"], ["birthyear", "unknown"], ["planet_id", 38], ["created_at", "2022-02-22 22:11:05.230415"], ["updated_at", "2022-02-22 22:11:05.230415"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dud Bolt"], ["birthyear", "unknown"], ["planet_id", 39], ["created_at", "2022-02-22 22:11:05.235170"], ["updated_at", "2022-02-22 22:11:05.235170"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gasgano"], ["birthyear", "unknown"], ["planet_id", 40], ["created_at", "2022-02-22 22:11:05.239958"], ["updated_at", "2022-02-22 22:11:05.239958"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ben Quadinaros"], ["birthyear", "unknown"], ["planet_id", 41], ["created_at", "2022-02-22 22:11:05.244241"], ["updated_at", "2022-02-22 22:11:05.244241"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mace Windu"], ["birthyear", "72BBY"], ["planet_id", 42], ["created_at", "2022-02-22 22:11:05.248347"], ["updated_at", "2022-02-22 22:11:05.248347"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.9ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ki-Adi-Mundi"], ["birthyear", "92BBY"], ["planet_id", 43], ["created_at", "2022-02-22 22:11:06.615390"], ["updated_at", "2022-02-22 22:11:06.615390"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.7ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kit Fisto"], ["birthyear", "unknown"], ["planet_id", 44], ["created_at", "2022-02-22 22:11:06.622670"], ["updated_at", "2022-02-22 22:11:06.622670"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Eeth Koth"], ["birthyear", "unknown"], ["planet_id", 45], ["created_at", "2022-02-22 22:11:06.627615"], ["updated_at", "2022-02-22 22:11:06.627615"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Adi Gallia"], ["birthyear", "unknown"], ["planet_id", 9], ["created_at", "2022-02-22 22:11:06.632383"], ["updated_at", "2022-02-22 22:11:06.632383"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Saesee Tiin"], ["birthyear", "unknown"], ["planet_id", 47], ["created_at", "2022-02-22 22:11:06.635963"], ["updated_at", "2022-02-22 22:11:06.635963"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Yarael Poof"], ["birthyear", "unknown"], ["planet_id", 48], ["created_at", "2022-02-22 22:11:06.639312"], ["updated_at", "2022-02-22 22:11:06.639312"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Plo Koon"], ["birthyear", "22BBY"], ["planet_id", 49], ["created_at", "2022-02-22 22:11:06.642679"], ["updated_at", "2022-02-22 22:11:06.642679"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mas Amedda"], ["birthyear", "unknown"], ["planet_id", 50], ["created_at", "2022-02-22 22:11:06.645648"], ["updated_at", "2022-02-22 22:11:06.645648"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gregar Typho"], ["birthyear", "unknown"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:06.648417"], ["updated_at", "2022-02-22 22:11:06.648417"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cordé"], ["birthyear", "unknown"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:06.651374"], ["updated_at", "2022-02-22 22:11:06.651374"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cliegg Lars"], ["birthyear", "82BBY"], ["planet_id", 1], ["created_at", "2022-02-22 22:11:07.289104"], ["updated_at", "2022-02-22 22:11:07.289104"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Poggle the Lesser"], ["birthyear", "unknown"], ["planet_id", 11], ["created_at", "2022-02-22 22:11:07.293983"], ["updated_at", "2022-02-22 22:11:07.293983"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Luminara Unduli"], ["birthyear", "58BBY"], ["planet_id", 51], ["created_at", "2022-02-22 22:11:07.297699"], ["updated_at", "2022-02-22 22:11:07.297699"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Barriss Offee"], ["birthyear", "40BBY"], ["planet_id", 51], ["created_at", "2022-02-22 22:11:07.301656"], ["updated_at", "2022-02-22 22:11:07.301656"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dormé"], ["birthyear", "unknown"], ["planet_id", 8], ["created_at", "2022-02-22 22:11:07.305099"], ["updated_at", "2022-02-22 22:11:07.305099"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dooku"], ["birthyear", "102BBY"], ["planet_id", 52], ["created_at", "2022-02-22 22:11:07.308132"], ["updated_at", "2022-02-22 22:11:07.308132"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bail Prestor Organa"], ["birthyear", "67BBY"], ["planet_id", 2], ["created_at", "2022-02-22 22:11:07.311122"], ["updated_at", "2022-02-22 22:11:07.311122"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jango Fett"], ["birthyear", "66BBY"], ["planet_id", 53], ["created_at", "2022-02-22 22:11:07.314250"], ["updated_at", "2022-02-22 22:11:07.314250"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Zam Wesell"], ["birthyear", "unknown"], ["planet_id", 54], ["created_at", "2022-02-22 22:11:07.317856"], ["updated_at", "2022-02-22 22:11:07.317856"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dexter Jettster"], ["birthyear", "unknown"], ["planet_id", 55], ["created_at", "2022-02-22 22:11:07.320915"], ["updated_at", "2022-02-22 22:11:07.320915"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.9ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lama Su"], ["birthyear", "unknown"], ["planet_id", 10], ["created_at", "2022-02-22 22:11:08.213626"], ["updated_at", "2022-02-22 22:11:08.213626"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Taun We"], ["birthyear", "unknown"], ["planet_id", 10], ["created_at", "2022-02-22 22:11:08.220589"], ["updated_at", "2022-02-22 22:11:08.220589"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jocasta Nu"], ["birthyear", "unknown"], ["planet_id", 9], ["created_at", "2022-02-22 22:11:08.225535"], ["updated_at", "2022-02-22 22:11:08.225535"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "R4-P17"], ["birthyear", "unknown"], ["planet_id", 28], ["created_at", "2022-02-22 22:11:08.230199"], ["updated_at", "2022-02-22 22:11:08.230199"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wat Tambor"], ["birthyear", "unknown"], ["planet_id", 56], ["created_at", "2022-02-22 22:11:08.234849"], ["updated_at", "2022-02-22 22:11:08.234849"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "San Hill"], ["birthyear", "unknown"], ["planet_id", 57], ["created_at", "2022-02-22 22:11:08.238576"], ["updated_at", "2022-02-22 22:11:08.238576"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Shaak Ti"], ["birthyear", "unknown"], ["planet_id", 58], ["created_at", "2022-02-22 22:11:08.242689"], ["updated_at", "2022-02-22 22:11:08.242689"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Grievous"], ["birthyear", "unknown"], ["planet_id", 59], ["created_at", "2022-02-22 22:11:08.246409"], ["updated_at", "2022-02-22 22:11:08.246409"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tarfful"], ["birthyear", "unknown"], ["planet_id", 14], ["created_at", "2022-02-22 22:11:08.250634"], ["updated_at", "2022-02-22 22:11:08.250634"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Raymus Antilles"], ["birthyear", "unknown"], ["planet_id", 2], ["created_at", "2022-02-22 22:11:08.254755"], ["updated_at", "2022-02-22 22:11:08.254755"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sly Moore"], ["birthyear", "unknown"], ["planet_id", 60], ["created_at", "2022-02-22 22:11:09.031745"], ["updated_at", "2022-02-22 22:11:09.031745"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "birthyear", "planet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tion Medon"], ["birthyear", "unknown"], ["planet_id", 12], ["created_at", "2022-02-22 22:11:09.038372"], ["updated_at", "2022-02-22 22:11:09.038372"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2022-02-22 16:11:34 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/laura/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/laura/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.2ms | Allocations: 415)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 2237)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-02-22 16:11:34 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-02-22 16:11:35 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/laura/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/laura/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.7ms | Allocations: 191)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 822)
+
+
+Started GET "/planets" for ::1 at 2022-02-22 16:11:40 -0600
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (0.6ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 19.1ms | ActiveRecord: 1.1ms | Allocations: 14046)
+
+
+Started GET "/people" for ::1 at 2022-02-22 16:11:44 -0600
+Processing by PeopleController#index as HTML
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 0.9ms | Allocations: 14973)
+
+
