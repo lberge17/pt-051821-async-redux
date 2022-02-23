@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createPerson } from '../../actions/actions'
 
-export default class PeopleForm extends Component {
+class PeopleForm extends Component {
   state = {
     name: ""
   }
@@ -13,6 +15,8 @@ export default class PeopleForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
+    this.props.createPerson(this.state)
+
     this.setState({name: ""})
   }
 
@@ -30,3 +34,5 @@ export default class PeopleForm extends Component {
     )
   }
 }
+
+export default connect(null, { createPerson })(PeopleForm);

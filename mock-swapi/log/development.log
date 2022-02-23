@@ -617,3 +617,249 @@ Processing by PeopleController#index as HTML
 Completed 200 OK in 36ms (Views: 11.8ms | ActiveRecord: 11.9ms | Allocations: 19834)
 
 
+Started GET "/people" for ::1 at 2022-02-22 17:37:25 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.9ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 33ms (Views: 18.0ms | ActiveRecord: 1.4ms | Allocations: 19840)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:37:44 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.5ms | Allocations: 10858)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:37:46 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.4ms | Allocations: 10857)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:42:22 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 87ms (Views: 83.8ms | ActiveRecord: 0.7ms | Allocations: 10858)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:43:04 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.4ms | Allocations: 10857)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:43:27 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.4ms | Allocations: 10838)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:43:47 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 10838)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:44:44 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.4ms | Allocations: 10838)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:44:56 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.9ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 10838)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:48:46 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 10838)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:49:35 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.4ms | Allocations: 10838)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:51:56 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.6ms | Allocations: 10838)
+
+
+Started POST "/people" for ::1 at 2022-02-22 17:52:00 -0600
+Processing by PeopleController#create as JSON
+  Parameters: {"name"=>"Laura", "person"=>{"name"=>"Laura"}}
+[31mUnpermitted parameter: :person[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:18:in `create'
+  [1m[36mPerson Create (5.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Laura"], ["created_at", "2022-02-22 23:52:00.355778"], ["updated_at", "2022-02-22 23:52:00.355778"]]
+  ↳ app/controllers/people_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:18:in `create'
+Completed 201 Created in 14ms (Views: 1.4ms | ActiveRecord: 6.6ms | Allocations: 2066)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:52:04 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.3ms | Allocations: 10957)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:52:05 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.4ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:52:06 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.4ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:55:39 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.6ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:55:55 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.3ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:56:04 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.5ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:56:45 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.5ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:59:17 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.4ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 17:59:31 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (1.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 89ms (Views: 79.8ms | ActiveRecord: 1.4ms | Allocations: 10957)
+
+
+Started GET "/people" for ::1 at 2022-02-22 18:00:49 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 18:03:18 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.3ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 18:03:27 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.6ms | Allocations: 10956)
+
+
+Started GET "/people" for ::1 at 2022-02-22 18:05:46 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.5ms | Allocations: 10956)
+
+
+Started DELETE "/people/2" for ::1 at 2022-02-22 18:05:48 -0600
+Processing by PeopleController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:36:in `set_person'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:30:in `destroy'
+  [1m[36mPerson Destroy (1.7ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/people_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:30:in `destroy'
+Completed 204 No Content in 19ms (ActiveRecord: 4.8ms | Allocations: 2400)
+
+
+Started GET "/people" for ::1 at 2022-02-22 18:05:50 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.5ms | Allocations: 10831)
+
+
+Started GET "/people" for ::1 at 2022-02-22 18:05:51 -0600
+Processing by PeopleController#index as */*
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/controllers/people_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.5ms | Allocations: 10831)
+
+
+Started DELETE "/people/83" for ::1 at 2022-02-22 18:05:53 -0600
+Processing by PeopleController#destroy as */*
+  Parameters: {"id"=>"83"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:36:in `set_person'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:30:in `destroy'
+  [1m[36mPerson Destroy (0.7ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 83]]
+  ↳ app/controllers/people_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:30:in `destroy'
+Completed 204 No Content in 6ms (ActiveRecord: 2.0ms | Allocations: 1731)
+
+
+Started DELETE "/people/43" for ::1 at 2022-02-22 18:05:56 -0600
+Processing by PeopleController#destroy as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:36:in `set_person'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:30:in `destroy'
+  [1m[36mPerson Destroy (0.6ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 43]]
+  ↳ app/controllers/people_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:30:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.8ms | Allocations: 1733)
+
+
