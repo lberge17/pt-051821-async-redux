@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createPerson } from '../../actions/actions'
+import { createPerson, updatePerson } from '../../actions/actions'
 
 class PeopleForm extends Component {
   state = {
-    name: ""
+    name: this.props.name ? this.props.name : ""
   }
 
   handleChange = e => {
@@ -15,8 +15,14 @@ class PeopleForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.createPerson(this.state)
-
+    if(this.props.id){
+      // dispatch an action to edit person
+      this.props.updatePerson({...this.state, id: this.props.id})
+      this.props.toggleEdit()
+    } else {
+      this.props.createPerson(this.state)
+    }
+    
     this.setState({name: ""})
   }
 
@@ -29,10 +35,10 @@ class PeopleForm extends Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <input type="submit" />
+        <input type="submit" value={this.props.id ? "Edit" : "Create"} />
       </form>
     )
   }
 }
 
-export default connect(null, { createPerson })(PeopleForm);
+export default connect(null, { createPerson, updatePerson })(PeopleForm);

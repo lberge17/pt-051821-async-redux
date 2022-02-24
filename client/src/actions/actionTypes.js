@@ -1,3 +1,9 @@
 export const SET_PEOPLE = "SET_PEOPLE"
 export const ADD_PERSON = "ADD_PERSON"
 export const DELETE_PERSON = "DELETE_PERSON"
+export const EDIT_PERSON = "EDIT_PERSON"
+
+export const SET_STARSHIPS = "SET_STARSHIPS"
+export const ADD_STARSHIP = "ADD_STARSHIP"
+export const DELETE_STARSHIP = "DELETE_STARSHIP"
+export const EDIT_STARSHIP = "EDIT_STARSHIP"
